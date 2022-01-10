@@ -5,4 +5,4 @@ if ! docker info > /dev/null 2>&1; then
     exit 1
 fi
 
-docker-compose run --rm app python cli.py $1
+docker-compose run --rm app python ./src/cli.py $1
