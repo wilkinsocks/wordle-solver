@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if ! docker info > /dev/null 2>&1; then
+    echo "Docker is not running"
+    exit 1
+fi
+
+docker-compose run --rm app python cli.py $1
