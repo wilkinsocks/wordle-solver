@@ -10,17 +10,7 @@ You must guess 5 letters in 6 goes. After each go, Wordle reveals the following:
 
 This CLI tool takes a guess, and provides possible answers.
 
-## Dictionary source
-This tool uses Project Gutenberg: Webster's Unabridged Dictionary, However it's not committed to this repo.  
-To obtain the source, download the plain text version at the following URL [Unabridged Dictionary Plain Text](https://www.gutenberg.org/ebooks/29765.txt.utf-8), and add the file to `./data/dictionary.txt`
-
-Or use the following command: 
-```
-curl https://www.gutenberg.org/ebooks/29765.txt.utf-8 --output ./data/dictionary.txt
-```
-
-  
-## Reference
+## How to use
 ### Searching for patterns
 `./scripts/search { SEARCH PATTERN }` — Searches dictionary for pattern  
 
@@ -41,5 +31,15 @@ BEARN
 [..]
 ```
 
+## Building
 ### Running in Docker:
 `./scripts/bootstrap` — Starts required Docker containers
+
+## Dictionary source
+This tool uses Project Gutenberg: Webster's Unabridged Dictionary, However it's not committed to this repo.  
+To obtain the source, download the plain text version at the following URL [Unabridged Dictionary Plain Text](https://www.gutenberg.org/ebooks/29765.txt.utf-8), and add the file to `./data/dictionary.txt`
+
+Or use the following command: 
+```
+curl https://www.gutenberg.org/ebooks/29765.txt.utf-8 --output ./data/dictionary.txt
+```
