@@ -1,6 +1,7 @@
 # Wordle Solver
 *This is just for fun*
-  
+
+[Wordle](https://www.powerlanguage.co.uk/wordle/) is a word guessing game.
 
 ## Dictionary source
 This tool uses Project Gutenberg: Webster's Unabridged Dictionary, However it's not committed to this repo.  
