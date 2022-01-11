@@ -1,5 +1,5 @@
 # Wordle Solver
-*This is just for fun — WIP* 😭
+*This is just for fun* 😭
 
 [Wordle](https://www.powerlanguage.co.uk/wordle/) is a word guessing game.
 
@@ -14,21 +14,30 @@ This CLI tool takes a guess, and provides possible answers.
 ### Searching for patterns
 `./scripts/search { SEARCH PATTERN }` — Searches dictionary for pattern  
 
-#### Example:
+#### Making a guesses:
 
-`./scripts/search B_A__`  
+`./scripts/search B_A_H`  
 
 #### Response:
 ```
-🔍 Found 48 possibilities for: B _ A _ _
----------------------------------------
-
+🔍 Found 4 possibilities for: [B _ A _ H]
+----------------------------------------
 BEACH
-BEADY
-BEAMY
-BEARD
-BEARN
-[..]
+BEATH
+BRACH
+BRASH
+```
+
+#### Making a guesses with missing letters:
+
+`./scripts/search B_A_H --missing C D`  
+
+#### Response:
+```
+🔍 Found 2 possibilities for: [B _ A _ H] without [C,D]
+----------------------------------------------------
+BEATH
+BRASH
 ```
 
 ## Building
