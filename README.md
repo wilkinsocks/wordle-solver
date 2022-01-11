@@ -14,7 +14,7 @@ This CLI tool takes a guess, and provides possible answers.
 ### Searching for patterns
 `./scripts/search { SEARCH PATTERN }` — Searches dictionary for pattern  
 
-#### Making a guesses:
+#### Making guesses:
 
 `./scripts/search B_A_H`  
 
@@ -28,7 +28,7 @@ BRACH
 BRASH
 ```
 
-#### Making a guesses with missing letters:
+#### Making guesses with missing letters:
 
 `./scripts/search B_A_H --missing C D`  
 
