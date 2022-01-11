@@ -10,10 +10,12 @@ def letter_valid(letter):
 
 args_parser = argparse.ArgumentParser()
 args_parser.add_argument('guess')
+args_parser.add_argument('--including', nargs='+')
 args_parser.add_argument('--missing', nargs='+')
 args = args_parser.parse_args()
 
 pattern_input = args.guess
+with_letters = args.including
 missing_letters = args.missing
 
 if len(pattern_input) != constants.WORDLE_LEGNTH:
@@ -42,7 +44,10 @@ if missing_letters:
             print(f'The letter {missing_letter} cannot be guessed and in the missing letters list')
             sys.exit()
 
-search = WordSearch(missing_letters)
+search = WordSearch(
+    included_letters=with_letters,
+    missing_letters=missing_letters,
+)
 
 possibilities = search.search_possibilities(letters_list)
 

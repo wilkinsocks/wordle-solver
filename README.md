@@ -42,6 +42,18 @@ BEATH
 BRASH
 ```
 
+#### Making guesses including letters without placing:
+
+`./scripts/search B_A_H --including C`  
+
+#### Response:
+```
+🔍 Found 2 possibilities for: [B _ A _ H]
+----------------------------------------
+BEACH
+BRACH
+```
+
 ## Building
 ### Running in Docker:
 `./scripts/bootstrap` — Starts required Docker containers

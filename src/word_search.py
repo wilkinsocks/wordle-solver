@@ -1,8 +1,10 @@
 import constants
+import sys
 
 class WordSearch():
-    def __init__(self, missing_letters=None):
+    def __init__(self, included_letters=None, missing_letters=None):
         self.words = self.load_words()
+        self.included_letters = included_letters
         self.missing_letters = missing_letters
 
     def search_possibilities(self, search_letters):
@@ -12,6 +14,9 @@ class WordSearch():
             letters_in_word = list(word)
 
             if self.has_missing_letters(letters_in_word):
+                continue
+            
+            if not self.has_included_letters(letters_in_word):
                 continue
 
             if self.check_combination(letters_in_word, search_letters):
@@ -28,6 +33,16 @@ class WordSearch():
                 return True
 
         return False
+
+    def has_included_letters(self, letters_in_word):
+        if not self.included_letters:
+            return True
+
+        for letter in self.included_letters:
+            if letter not in letters_in_word:
+                return False
+
+        return True
 
     def check_combination(self, letters_in_word, search_letters):
         for index, word_letter in enumerate(letters_in_word):
