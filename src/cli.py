@@ -15,7 +15,7 @@ args_parser.add_argument('--missing', nargs='+')
 args = args_parser.parse_args()
 
 pattern_input = args.guess
-with_letters = args.including
+including_letters = args.including
 missing_letters = args.missing
 
 if len(pattern_input) != constants.WORDLE_LEGNTH:
@@ -45,7 +45,7 @@ if missing_letters:
             sys.exit()
 
 search = WordSearch(
-    included_letters=with_letters,
+    included_letters=including_letters,
     missing_letters=missing_letters,
 )
 
@@ -66,16 +66,25 @@ if len(possibilities) == 0:
     sys.exit()
 
 if len(possibilities) == 1:
-    message = f'🔍 Found only 1 possibility for: [{formatted_input}]'
+    message = f'🔍 Found only 1 possibility for [{formatted_input}]'
 else:
-    message = f'🔍 Found {len(possibilities)} possibilities for: [{formatted_input}]'
+    message = f'🔍 Found {len(possibilities)} possibilities for [{formatted_input}]'
+
+if including_letters:
+    formatted_including_letters = ','.join(including_letters)
+    message += f', including [{formatted_including_letters}]'
 
 if missing_letters:
     formatted_missing_letters = ','.join(missing_letters)
-    message += f' without [{formatted_missing_letters}]'
+    message += f', without [{formatted_missing_letters}]'
 
 print(message)
 print('-' * len(message))
+
+if len(possibilities) == 1:
+    word = possibilities[0]
+    print(f'It can only be {word}!')
+    sys.exit(0)
 
 for word in possibilities:
     print(word)
