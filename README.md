@@ -12,7 +12,9 @@ This CLI tool takes a guess, and provides possible answers.
 
 ## How to use
 ### Searching for patterns
-`./scripts/search { SEARCH PATTERN }` — Searches dictionary for pattern  
+`./scripts/search { SEARCH PATTERN }` — Searches dictionary for pattern
+
+For the *search pattern*, use letters `A-Z` with `_` for blanks; e.g. `GU_G_`.
 
 #### Making guesses:
 
